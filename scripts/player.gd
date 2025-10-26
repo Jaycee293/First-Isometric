@@ -32,7 +32,17 @@ func _physics_process(delta: float) -> void:
 			animated_sprite_2d.play("side_walk")
 			last_facing = "right"
 	else:
-		animated_sprite_2d.play("front_idle")
+		match last_facing:
+			"down":
+				animated_sprite_2d.play("front_idle")
+			"up":
+				animated_sprite_2d.play("back_idle")
+			"left":
+				animated_sprite_2d.play("side_idle")
+			"right":
+				animated_sprite_2d.flip_h = false
+				animated_sprite_2d.play("side_idle")
+		
 
 func _do_attack(): 
 	# Hide the regular sprite and show the attack sprite
