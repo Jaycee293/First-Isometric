@@ -4,6 +4,6 @@ extends Area2D
 @export var damage := 14
 
 func _init() -> void:
-	collision_layer = 2
-	collision_mask = 0 
+	collision_layer = 4
+	collision_mask = 2
 	
