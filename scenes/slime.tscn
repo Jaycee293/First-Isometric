@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://3f26hrjg8ktd"]
+[gd_scene load_steps=12 format=3 uid="uid://3f26hrjg8ktd"]
 
 [ext_resource type="Script" uid="uid://betttjg6ojej7" path="res://scripts/slime.gd" id="1_2npkn"]
 [ext_resource type="Texture2D" uid="uid://d2jofgpff8a4q" path="res://assets/Pixelarium/Pixelarium - Enemy Pack1/Slime/Blue Slime/spr_Blue_slime_idle.png" id="1_p2gj0"]
@@ -286,6 +286,9 @@ _data = {
 &"idle": SubResource("Animation_pjw23")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_2npkn"]
+radius = 7.0
+
 [node name="Slime" type="CharacterBody2D"]
 script = ExtResource("1_2npkn")
 
@@ -304,3 +307,6 @@ polygon = PackedVector2Array(-6, -1, -6, 4, -5, 4, -5, 5, -4, 5, -4, 6, 5, 6, 5,
 libraries = {
 &"": SubResource("AnimationLibrary_gstla")
 }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2npkn")
