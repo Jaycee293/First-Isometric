@@ -815,3 +815,4 @@ libraries = {
 }
 
 [connection signal="area_entered" from="Attack/MyHitBox" to="." method="_on_my_hit_box_area_entered"]
+[connection signal="body_entered" from="Attack/MyHitBox" to="Attack/MyHitBox" method="_on_body_entered"]

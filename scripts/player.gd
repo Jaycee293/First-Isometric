@@ -36,8 +36,3 @@ func _do_attack():
 	await animation_player.animation_finished
 	attack.hide()
 	animated_sprite_2d.show()
-
-
-func _on_my_hit_box_area_entered(area: Area2D) -> void:
-	if area.is_in_group("myhurtbox"):
-		area.take_damage()
