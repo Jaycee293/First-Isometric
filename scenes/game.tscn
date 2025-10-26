@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://17vmtxrkysi7"]
+[gd_scene load_steps=7 format=3 uid="uid://17vmtxrkysi7"]
 
 [ext_resource type="PackedScene" uid="uid://bls7e03uednrc" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://bvf8r25ykkwxf" path="res://scenes/tree_1.tscn" id="2_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://cuh2e3bv06p66" path="res://scenes/tree_2.tscn" id="3_iywne"]
 [ext_resource type="PackedScene" uid="uid://0ve407rulv80" path="res://scenes/tree_3.tscn" id="4_p57ef"]
 [ext_resource type="PackedScene" uid="uid://3f26hrjg8ktd" path="res://scenes/slime.tscn" id="5_iywne"]
+[ext_resource type="AudioStream" uid="uid://d0im2j3n7e56q" path="res://assets/audio/the-return-of-the-8-bit-era-301292.mp3" id="6_p57ef"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -23,6 +24,53 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.10980392, 0.33333334, 0.28627452, 1)
 
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Slime14" parent="Enemies" instance=ExtResource("5_iywne")]
+position = Vector2(56, -40)
+
+[node name="Slime13" parent="Enemies" instance=ExtResource("5_iywne")]
+position = Vector2(8, 64)
+
+[node name="Slime" parent="Enemies" instance=ExtResource("5_iywne")]
+position = Vector2(-99, 20)
+
+[node name="Slime2" parent="Enemies" instance=ExtResource("5_iywne")]
+position = Vector2(41, -55)
+
+[node name="Slime3" parent="Enemies" instance=ExtResource("5_iywne")]
+position = Vector2(-52, 40)
+
+[node name="Slime4" parent="Enemies" instance=ExtResource("5_iywne")]
+position = Vector2(-55, 5)
+
+[node name="Slime5" parent="Enemies" instance=ExtResource("5_iywne")]
+position = Vector2(-48, -24)
+
+[node name="Slime6" parent="Enemies" instance=ExtResource("5_iywne")]
+position = Vector2(40, -16)
+
+[node name="Slime7" parent="Enemies" instance=ExtResource("5_iywne")]
+position = Vector2(40, 40)
+
+[node name="Slime8" parent="Enemies" instance=ExtResource("5_iywne")]
+position = Vector2(-8, -56)
+
+[node name="Slime9" parent="Enemies" instance=ExtResource("5_iywne")]
+position = Vector2(-48, -56)
+
+[node name="Slime10" parent="Enemies" instance=ExtResource("5_iywne")]
+position = Vector2(-16, 64)
+
+[node name="Slime11" parent="Enemies" instance=ExtResource("5_iywne")]
+position = Vector2(-72, 56)
+
+[node name="Slime12" parent="Enemies" instance=ExtResource("5_iywne")]
+position = Vector2(40, 56)
+
+[node name="Slime15" parent="Enemies" instance=ExtResource("5_iywne")]
+position = Vector2(72, -24)
+
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(1, -11)
 
@@ -31,26 +79,73 @@ position = Vector2(1, 7)
 zoom = Vector2(8, 8)
 position_smoothing_speed = 12.0
 
-[node name="Tree_1" parent="." instance=ExtResource("2_lbhrr")]
+[node name="Game over" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+layer = 5
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Game over"]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.62352943)
+
+[node name="Label" type="Label" parent="Game over/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -11.5
+offset_right = 43.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "Game Over"
+
+[node name="Cenary" type="Node" parent="."]
+
+[node name="Tree_1" parent="Cenary" instance=ExtResource("2_lbhrr")]
 position = Vector2(75, 33)
 
-[node name="Tree_2" parent="." instance=ExtResource("3_iywne")]
+[node name="Tree_2" parent="Cenary" instance=ExtResource("3_iywne")]
 position = Vector2(-92, -50)
 
-[node name="Tree_3" parent="." instance=ExtResource("4_p57ef")]
+[node name="Tree_3" parent="Cenary" instance=ExtResource("4_p57ef")]
 position = Vector2(93, -38)
 
-[node name="Tree_4" parent="." instance=ExtResource("3_iywne")]
+[node name="Tree_4" parent="Cenary" instance=ExtResource("3_iywne")]
 position = Vector2(-105, -37)
 
-[node name="Slime" parent="." instance=ExtResource("5_iywne")]
-position = Vector2(-99, 20)
+[node name="Tree_5" parent="Cenary" instance=ExtResource("2_lbhrr")]
+position = Vector2(-48, 88)
 
-[node name="Slime2" parent="." instance=ExtResource("5_iywne")]
-position = Vector2(41, -55)
+[node name="Tree_6" parent="Cenary" instance=ExtResource("3_iywne")]
+position = Vector2(-104, 80)
 
-[node name="Slime3" parent="." instance=ExtResource("5_iywne")]
-position = Vector2(-52, 40)
+[node name="Tree_7" parent="Cenary" instance=ExtResource("4_p57ef")]
+position = Vector2(-88, 112)
 
-[node name="Slime4" parent="." instance=ExtResource("5_iywne")]
-position = Vector2(-55, 5)
+[node name="Tree_8" parent="Cenary" instance=ExtResource("3_iywne")]
+position = Vector2(128, 104)
+
+[node name="Tree_9" parent="Cenary" instance=ExtResource("2_lbhrr")]
+position = Vector2(24, -104)
+
+[node name="Tree_10" parent="Cenary" instance=ExtResource("3_iywne")]
+position = Vector2(0, -112)
+
+[node name="Tree_11" parent="Cenary" instance=ExtResource("3_iywne")]
+position = Vector2(-136, -40)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_p57ef")
+autoplay = true
+
+[connection signal="hp_zero" from="Player" to="Player" method="_on_hp_zero"]
