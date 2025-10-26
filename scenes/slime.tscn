@@ -290,8 +290,6 @@ _data = {
 radius = 7.0
 
 [node name="Slime" type="CharacterBody2D"]
-collision_layer = 3
-collision_mask = 7
 script = ExtResource("1_2npkn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -782,8 +782,6 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
-collision_layer = 7
-collision_mask = 7
 script = ExtResource("1_qlg0r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -799,8 +797,8 @@ texture = ExtResource("1_dqkch")
 hframes = 7
 
 [node name="MyHitBox" type="Area2D" parent="Attack"]
-collision_layer = 7
-collision_mask = 7
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("11_d2wvv")
 metadata/_custom_type_script = "uid://ccnjq8vodv02x"
 
