@@ -575,7 +575,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t4otl"]
 radius = 4.0
-height = 16.0
+height = 12.0
 
 [sub_resource type="Animation" id="Animation_d2wvv"]
 length = 0.001
@@ -1096,10 +1096,10 @@ script = ExtResource("1_qlg0r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hax0n")
-animation = &"side_walk"
+animation = &"front_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
+position = Vector2(0, 5)
 shape = SubResource("CapsuleShape2D_t4otl")
 
 [node name="Attack" type="Sprite2D" parent="."]

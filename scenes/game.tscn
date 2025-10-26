@@ -9,12 +9,18 @@
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -10
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 z_index = -1
-offset_left = -270.0
-offset_top = -181.0
-offset_right = 24.0
-offset_bottom = -12.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -891.0134
+offset_bottom = -600.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(1.8717445, 2.2895832)
 color = Color(0.10980392, 0.33333334, 0.28627452, 1)
 
