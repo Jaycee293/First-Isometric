@@ -6,3 +6,8 @@
 *.gd.uid eol=lf
 *.tres eol=lf
 *.tscn eol=lf
+*.cfg eol=lf
+*.gpl eol=lf
+*.md eol=lf
+*.gdshader eol=lf
+*.gdshader.uid eol=lf
