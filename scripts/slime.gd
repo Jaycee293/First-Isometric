@@ -17,7 +17,6 @@ func _physics_process(delta: float) -> void:
 func take_damage():
 	health -= 1
 	animation_player.play("hurt")
-	print("hurt")
 	if health <= 0:
 		is_dead = true
 		velocity = Vector2.ZERO
