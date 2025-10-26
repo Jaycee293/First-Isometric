@@ -10,10 +10,13 @@
 y_sort_enabled = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -140.0
-offset_top = -84.0
-offset_right = 154.0
-offset_bottom = 85.0
+z_index = -1
+offset_left = -270.0
+offset_top = -181.0
+offset_right = 24.0
+offset_bottom = -12.0
+scale = Vector2(1.8717445, 2.2895832)
+color = Color(0.10980392, 0.33333334, 0.28627452, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(1, -11)

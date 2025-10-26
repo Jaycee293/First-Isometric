@@ -622,7 +622,7 @@ tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(0, 0)]
 }
 tracks/4/type = "value"
@@ -634,7 +634,7 @@ tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [0.0]
 }
 tracks/5/type = "value"
@@ -646,7 +646,7 @@ tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(1, 1)]
 }
 tracks/6/type = "value"
@@ -658,12 +658,12 @@ tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [PackedVector2Array(-16, -9, -18, -9, -23, -1, -22, 13, -10, 24, 9, 26, 16, 21, 8, 13, -11, 8)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
-tracks/7/enabled = true
+tracks/7/enabled = false
 tracks/7/path = NodePath("Attack/MyHitBox/CollisionPolygon2D:disabled")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
@@ -671,7 +671,7 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_y4r1p"]
@@ -723,7 +723,7 @@ tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0.06688266, 0.27075392),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
+"update": 1,
 "values": [Vector2(0, 0), Vector2(0, 0)]
 }
 tracks/4/type = "value"
@@ -735,7 +735,7 @@ tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0.06688266, 0.27075392),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
+"update": 1,
 "values": [0.0, 0.0]
 }
 tracks/5/type = "value"
@@ -747,7 +747,7 @@ tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0.06688266, 0.27075392),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
+"update": 1,
 "values": [Vector2(1, 1), Vector2(1, 1)]
 }
 tracks/6/type = "value"
@@ -759,7 +759,7 @@ tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0.06688266, 0.27075392),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
+"update": 1,
 "values": [PackedVector2Array(-16, -9, -18, -9, -23, -1, -22, 13, -10, 24, 9, 26, 16, 21, 8, 13, -11, 8), PackedVector2Array(-7, 12, -7, 13, -7, 14, -7, 15, -10, 24, 9, 26, 16, 21, 8, 13, -6, 12)]
 }
 tracks/7/type = "value"
@@ -769,10 +769,10 @@ tracks/7/path = NodePath("Attack/MyHitBox/CollisionPolygon2D:disabled")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.33360752),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.065767206, 0.1681353),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [true, false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3v2ag"]
@@ -802,6 +802,7 @@ hframes = 7
 [node name="MyHitBox" type="Area2D" parent="Attack"]
 collision_layer = 2
 collision_mask = 4
+monitorable = false
 script = ExtResource("11_d2wvv")
 metadata/_custom_type_script = "uid://ccnjq8vodv02x"
 

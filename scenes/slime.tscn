@@ -1,11 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://3f26hrjg8ktd"]
+[gd_scene load_steps=14 format=3 uid="uid://3f26hrjg8ktd"]
 
 [ext_resource type="Script" uid="uid://betttjg6ojej7" path="res://scripts/slime.gd" id="1_2npkn"]
 [ext_resource type="Texture2D" uid="uid://d2jofgpff8a4q" path="res://assets/Pixelarium/Pixelarium - Enemy Pack1/Slime/Blue Slime/spr_Blue_slime_idle.png" id="1_p2gj0"]
 [ext_resource type="Texture2D" uid="uid://ydald0t0gv87" path="res://assets/Pixelarium/Pixelarium - Enemy Pack1/Slime/Blue Slime/spr_Blue_slime_attack.png" id="2_n6pvg"]
 [ext_resource type="Script" uid="uid://qwl46b8ba45y" path="res://scripts/myhurtbox.gd" id="2_pjw23"]
-[ext_resource type="Script" uid="uid://ccnjq8vodv02x" path="res://scripts/myhitbox.gd" id="4_fd6lc"]
 [ext_resource type="Texture2D" uid="uid://deox1mii80mb6" path="res://assets/Pixelarium/Pixelarium - Enemy Pack1/Slime/Blue Slime/spr_Blue_slime_hurt.png" id="5_fd6lc"]
+[ext_resource type="Texture2D" uid="uid://q3jxocmrv8rt" path="res://assets/Pixelarium/Pixelarium - Enemy Pack1/Slime/Blue Slime/spr_Blue_slime_death.png" id="6_fd6lc"]
 
 [sub_resource type="Animation" id="Animation_2npkn"]
 length = 0.001
@@ -80,6 +80,30 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite2D/MyHurtBox/CollisionPolygon2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CollisionShape2D:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_fd6lc"]
@@ -279,10 +303,75 @@ tracks/5/keys = {
 "values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 }
 
+[sub_resource type="Animation" id="Animation_v5wyi"]
+resource_name = "die"
+step = 0.066
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_fd6lc")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.066, 0.132, 0.198, 0.264, 0.32999998, 0.396, 0.462, 0.528, 0.594, 0.65999997, 0.726, 0.792, 0.858, 0.924),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D/MyHurtBox/CollisionPolygon2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.32),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gstla"]
 _data = {
 &"RESET": SubResource("Animation_2npkn"),
 &"attack": SubResource("Animation_fd6lc"),
+&"die": SubResource("Animation_v5wyi"),
 &"hurt": SubResource("Animation_gstla"),
 &"idle": SubResource("Animation_pjw23")
 }
@@ -292,7 +381,7 @@ radius = 7.0
 
 [node name="Slime" type="CharacterBody2D"]
 collision_layer = 4
-collision_mask = 7
+collision_mask = 5
 script = ExtResource("1_2npkn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -301,21 +390,11 @@ hframes = 6
 
 [node name="MyHurtBox" type="Area2D" parent="Sprite2D"]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 0
 script = ExtResource("2_pjw23")
 metadata/_custom_type_script = "uid://qwl46b8ba45y"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/MyHurtBox"]
-polygon = PackedVector2Array(-6, -1, -6, 4, -5, 4, -5, 5, -4, 5, -4, 6, 5, 6, 5, 5, 6, 5, 6, 4, 7, 4, 7, -1, 6, -1, 6, -4, 5, -4, 5, -5, 3, -5, 3, -6, -2, -6, -2, -5, -4, -5, -4, -4, -5, -4, -5, -1)
-
-[node name="MyHitBox" type="Area2D" parent="Sprite2D"]
-collision_layer = 4
-collision_mask = 2
-monitoring = false
-script = ExtResource("4_fd6lc")
-metadata/_custom_type_script = "uid://ccnjq8vodv02x"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/MyHitBox"]
 polygon = PackedVector2Array(-6, -1, -6, 4, -5, 4, -5, 5, -4, 5, -4, 6, 5, 6, 5, 5, 6, 5, 6, 4, 7, 4, 7, -1, 6, -1, 6, -4, 5, -4, 5, -5, 3, -5, 3, -6, -2, -6, -2, -5, -4, -5, -4, -4, -5, -4, -5, -1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

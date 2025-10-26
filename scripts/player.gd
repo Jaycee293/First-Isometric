@@ -30,6 +30,7 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.play("front_idle")
 
 func _do_attack(): 
+	print("do attack")
 	animated_sprite_2d.hide()
 	attack.show()
 	animation_player.play("front_attack")
