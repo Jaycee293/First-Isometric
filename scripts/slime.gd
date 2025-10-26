@@ -4,3 +4,4 @@ extends CharacterBody2D
 
 func take_damage(amount: int) -> void:
 	animation_player.play("hurt")
+	print("Hurt!")
