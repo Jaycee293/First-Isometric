@@ -2,3 +2,7 @@
 * text=auto
 *.txt eol=lf
 *.png.import eol=lf
+*.gd eol=lf
+*.gd.uid eol=lf
+*.tres eol=lf
+*.tscn eol=lf
