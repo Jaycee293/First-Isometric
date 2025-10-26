@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://3f26hrjg8ktd"]
+[gd_scene load_steps=11 format=3 uid="uid://3f26hrjg8ktd"]
 
+[ext_resource type="Script" uid="uid://betttjg6ojej7" path="res://scripts/slime.gd" id="1_2npkn"]
 [ext_resource type="Texture2D" uid="uid://d2jofgpff8a4q" path="res://assets/Pixelarium/Pixelarium - Enemy Pack1/Slime/Blue Slime/spr_Blue_slime_idle.png" id="1_p2gj0"]
 [ext_resource type="Texture2D" uid="uid://ydald0t0gv87" path="res://assets/Pixelarium/Pixelarium - Enemy Pack1/Slime/Blue Slime/spr_Blue_slime_attack.png" id="2_n6pvg"]
+[ext_resource type="Script" uid="uid://qwl46b8ba45y" path="res://scripts/myhurtbox.gd" id="2_pjw23"]
+[ext_resource type="Texture2D" uid="uid://deox1mii80mb6" path="res://assets/Pixelarium/Pixelarium - Enemy Pack1/Slime/Blue Slime/spr_Blue_slime_hurt.png" id="5_fd6lc"]
 
 [sub_resource type="Animation" id="Animation_pjw23"]
 resource_name = "idle"
@@ -47,7 +50,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D/Area2D/CollisionPolygon2D:polygon")
+tracks/3/path = NodePath("Sprite2D/MyHurtBox/CollisionPolygon2D:polygon")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -59,7 +62,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Sprite2D/Area2D/CollisionPolygon2D:position")
+tracks/4/path = NodePath("Sprite2D/MyHurtBox/CollisionPolygon2D:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -71,7 +74,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Sprite2D/Area2D/CollisionPolygon2D:rotation")
+tracks/5/path = NodePath("Sprite2D/MyHurtBox/CollisionPolygon2D:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -122,7 +125,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D/Area2D/CollisionPolygon2D:polygon")
+tracks/3/path = NodePath("Sprite2D/MyHurtBox/CollisionPolygon2D:polygon")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -134,7 +137,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Sprite2D/Area2D/CollisionPolygon2D:position")
+tracks/4/path = NodePath("Sprite2D/MyHurtBox/CollisionPolygon2D:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -146,7 +149,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Sprite2D/Area2D/CollisionPolygon2D:rotation")
+tracks/5/path = NodePath("Sprite2D/MyHurtBox/CollisionPolygon2D:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -200,7 +203,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D/Area2D/CollisionPolygon2D:polygon")
+tracks/3/path = NodePath("Sprite2D/MyHurtBox/CollisionPolygon2D:polygon")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -212,7 +215,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Sprite2D/Area2D/CollisionPolygon2D:position")
+tracks/4/path = NodePath("Sprite2D/MyHurtBox/CollisionPolygon2D:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -224,7 +227,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Sprite2D/Area2D/CollisionPolygon2D:rotation")
+tracks/5/path = NodePath("Sprite2D/MyHurtBox/CollisionPolygon2D:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -234,22 +237,67 @@ tracks/5/keys = {
 "values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.3228014]
 }
 
+[sub_resource type="Animation" id="Animation_gstla"]
+resource_name = "hurt"
+length = 0.24
+step = 0.066
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_fd6lc")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.066, 0.132, 0.198),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gstla"]
 _data = {
 &"RESET": SubResource("Animation_2npkn"),
 &"attack": SubResource("Animation_fd6lc"),
+&"hurt": SubResource("Animation_gstla"),
 &"idle": SubResource("Animation_pjw23")
 }
 
 [node name="Slime" type="CharacterBody2D"]
+script = ExtResource("1_2npkn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_p2gj0")
 hframes = 6
 
-[node name="Area2D" type="Area2D" parent="Sprite2D"]
+[node name="MyHurtBox" type="Area2D" parent="Sprite2D"]
+script = ExtResource("2_pjw23")
+metadata/_custom_type_script = "uid://qwl46b8ba45y"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/MyHurtBox"]
 polygon = PackedVector2Array(-6, -1, -6, 4, -5, 4, -5, 5, -4, 5, -4, 6, 5, 6, 5, 5, 6, 5, 6, 4, 7, 4, 7, -1, 6, -1, 6, -4, 5, -4, 5, -5, 3, -5, 3, -6, -2, -6, -2, -5, -4, -5, -4, -4, -5, -4, -5, -1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
