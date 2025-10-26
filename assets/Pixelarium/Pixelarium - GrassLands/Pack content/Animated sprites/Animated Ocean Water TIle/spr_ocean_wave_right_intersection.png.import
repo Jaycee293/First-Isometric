@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfqm8c02uplk2"
-path="res://.godot/imported/spr_ocean_wave_right_intersection.png-6ef7ddf859e3f0d4485c10d343a8b5d1.ctex"
+path="res://.godot/imported/spr_ocean_wave_right_intersection.png-fdedcdc8c71c513b6f8dbd1b6a6b6c95.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Pixelarium/Pixelarium - GrassLands - Free Version/Pack content/Animated sprites/Animated Ocean Water TIle/spr_ocean_wave_right_intersection.png"
-dest_files=["res://.godot/imported/spr_ocean_wave_right_intersection.png-6ef7ddf859e3f0d4485c10d343a8b5d1.ctex"]
+source_file="res://assets/Pixelarium/Pixelarium - GrassLands/Pack content/Animated sprites/Animated Ocean Water TIle/spr_ocean_wave_right_intersection.png"
+dest_files=["res://.godot/imported/spr_ocean_wave_right_intersection.png-fdedcdc8c71c513b6f8dbd1b6a6b6c95.ctex"]
 
 [params]
 

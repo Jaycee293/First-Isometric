@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://blg7joi2cy0vo"
-path="res://.godot/imported/spr_campfire_burning.png-c136aa742088595f75007c1fe0d713e2.ctex"
+path="res://.godot/imported/spr_campfire_burning.png-6665a24335a554761533b8afa24b82cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Pixelarium/Pixelarium - GrassLands - Free Version/Pack content/Animated sprites/Animated Campfire/spr_campfire_burning.png"
-dest_files=["res://.godot/imported/spr_campfire_burning.png-c136aa742088595f75007c1fe0d713e2.ctex"]
+source_file="res://assets/Pixelarium/Pixelarium - GrassLands/Pack content/Animated sprites/Animated Campfire/spr_campfire_burning.png"
+dest_files=["res://.godot/imported/spr_campfire_burning.png-6665a24335a554761533b8afa24b82cb.ctex"]
 
 [params]
 

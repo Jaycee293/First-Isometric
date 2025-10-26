@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://sc870k3fh6ek"
-path="res://.godot/imported/spr_goblin_hurt.png-441be62d21032dd3e6f6528ebede9b2f.ctex"
+path="res://.godot/imported/spr_goblin_hurt.png-6696c85198a1bc11ec794d29a8c26093.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Pixelarium/Pixelarium - Enemy Pack1 - Free Version/Golbin/spr_goblin_hurt.png"
-dest_files=["res://.godot/imported/spr_goblin_hurt.png-441be62d21032dd3e6f6528ebede9b2f.ctex"]
+source_file="res://assets/Pixelarium/Pixelarium - Enemy Pack1/Golbin/spr_goblin_hurt.png"
+dest_files=["res://.godot/imported/spr_goblin_hurt.png-6696c85198a1bc11ec794d29a8c26093.ctex"]
 
 [params]
 

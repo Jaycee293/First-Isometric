@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c16ypagebuqj8"
-path="res://.godot/imported/spr_Blue_slime_hurt_shadowless.png-0cb93da5aab28217a7f012eeebf40a4a.ctex"
+path="res://.godot/imported/spr_Blue_slime_hurt_shadowless.png-145f839d592d72f11c80acbaf7723ada.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Pixelarium/Pixelarium - Enemy Pack1 - Free Version/Slime/Blue Slime/shadowless/spr_Blue_slime_hurt_shadowless.png"
-dest_files=["res://.godot/imported/spr_Blue_slime_hurt_shadowless.png-0cb93da5aab28217a7f012eeebf40a4a.ctex"]
+source_file="res://assets/Pixelarium/Pixelarium - Enemy Pack1/Slime/Blue Slime/shadowless/spr_Blue_slime_hurt_shadowless.png"
+dest_files=["res://.godot/imported/spr_Blue_slime_hurt_shadowless.png-145f839d592d72f11c80acbaf7723ada.ctex"]
 
 [params]
 

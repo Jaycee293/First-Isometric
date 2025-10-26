@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cy6eu7t2hr7vb"
-path="res://.godot/imported/spr_right_side_fence_three-intersection.png-2231883543fa6973c31fcb50e2bafb36.ctex"
+path="res://.godot/imported/spr_right_side_fence_three-intersection.png-e8dd89681d2cab2d8abeeb61ff975c63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Pixelarium/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Objects and buildings/Fences/spr_right_side_fence_three-intersection.png"
-dest_files=["res://.godot/imported/spr_right_side_fence_three-intersection.png-2231883543fa6973c31fcb50e2bafb36.ctex"]
+source_file="res://assets/Pixelarium/Pixelarium - GrassLands/Pack content/Sprites/Objects and buildings/Fences/spr_right_side_fence_three-intersection.png"
+dest_files=["res://.godot/imported/spr_right_side_fence_three-intersection.png-e8dd89681d2cab2d8abeeb61ff975c63.ctex"]
 
 [params]
 

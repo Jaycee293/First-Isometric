@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dbr4s3magilqn"
-path="res://.godot/imported/spr_goblin_walk_shadowless.png-aaa8d78a8d67cfc5b46ce28a22d50221.ctex"
+path="res://.godot/imported/spr_goblin_walk_shadowless.png-e7ea147f989418e5f87e8b1738cb7e93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Pixelarium/Pixelarium - Enemy Pack1 - Free Version/Golbin/Shadowless/spr_goblin_walk_shadowless.png"
-dest_files=["res://.godot/imported/spr_goblin_walk_shadowless.png-aaa8d78a8d67cfc5b46ce28a22d50221.ctex"]
+source_file="res://assets/Pixelarium/Pixelarium - Enemy Pack1/Golbin/Shadowless/spr_goblin_walk_shadowless.png"
+dest_files=["res://.godot/imported/spr_goblin_walk_shadowless.png-e7ea147f989418e5f87e8b1738cb7e93.ctex"]
 
 [params]
 

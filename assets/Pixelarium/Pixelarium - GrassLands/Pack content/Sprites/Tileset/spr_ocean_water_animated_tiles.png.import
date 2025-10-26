@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hmp6pkwhfxbf"
-path="res://.godot/imported/spr_ocean_water_animated_tiles.png-186bb2bd77954e80c43ffa5eff1be5e3.ctex"
+path="res://.godot/imported/spr_ocean_water_animated_tiles.png-91883b7627b911fe04705da26f040f43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Pixelarium/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/spr_ocean_water_animated_tiles.png"
-dest_files=["res://.godot/imported/spr_ocean_water_animated_tiles.png-186bb2bd77954e80c43ffa5eff1be5e3.ctex"]
+source_file="res://assets/Pixelarium/Pixelarium - GrassLands/Pack content/Sprites/Tileset/spr_ocean_water_animated_tiles.png"
+dest_files=["res://.godot/imported/spr_ocean_water_animated_tiles.png-91883b7627b911fe04705da26f040f43.ctex"]
 
 [params]
 

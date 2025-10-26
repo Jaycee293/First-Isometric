@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbh6m2aq3tgal"
-path="res://.godot/imported/spr_front_wave_animated.png-7d0d64af2fbc49c0eb7a9a733a3a1e20.ctex"
+path="res://.godot/imported/spr_front_wave_animated.png-542105b80a16ddff463640ddf22aaa28.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Pixelarium/Pixelarium - GrassLands - Free Version/Pack content/Animated sprites/Animated water waves/spr_front_wave_animated.png"
-dest_files=["res://.godot/imported/spr_front_wave_animated.png-7d0d64af2fbc49c0eb7a9a733a3a1e20.ctex"]
+source_file="res://assets/Pixelarium/Pixelarium - GrassLands/Pack content/Animated sprites/Animated water waves/spr_front_wave_animated.png"
+dest_files=["res://.godot/imported/spr_front_wave_animated.png-542105b80a16ddff463640ddf22aaa28.ctex"]
 
 [params]
 

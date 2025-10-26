@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dykr55lq48fsc"
-path="res://.godot/imported/spr_player_right_attack_shadowless.png-36901f8935a411c65c5cc15b76e64d04.ctex"
+path="res://.godot/imported/spr_player_right_attack_shadowless.png-125dc5da8b760381a314ef39a32ba571.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Pixelarium/Pixelarium - Playable Character - Free Version/Pack Content/Shadowless animations/spr_player_right_attack_shadowless.png"
-dest_files=["res://.godot/imported/spr_player_right_attack_shadowless.png-36901f8935a411c65c5cc15b76e64d04.ctex"]
+source_file="res://assets/Pixelarium/Pixelarium - Playable Character/Pack Content/Shadowless animations/spr_player_right_attack_shadowless.png"
+dest_files=["res://.godot/imported/spr_player_right_attack_shadowless.png-125dc5da8b760381a314ef39a32ba571.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnewykaw3prjx"
-path="res://.godot/imported/spr_player_back_hit_clear.png-513b1a669ca5fbad50626c96bdb2e4ac.ctex"
+path="res://.godot/imported/spr_player_back_hit_clear.png-7742b3c600d5d6b55962bc416b6d0780.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Pixelarium/Pixelarium - Playable Character - Free Version/Pack Content/hit animations without filter/spr_player_back_hit_clear.png"
-dest_files=["res://.godot/imported/spr_player_back_hit_clear.png-513b1a669ca5fbad50626c96bdb2e4ac.ctex"]
+source_file="res://assets/Pixelarium/Pixelarium - Playable Character/Pack Content/hit animations without filter/spr_player_back_hit_clear.png"
+dest_files=["res://.godot/imported/spr_player_back_hit_clear.png-7742b3c600d5d6b55962bc416b6d0780.ctex"]
 
 [params]
 

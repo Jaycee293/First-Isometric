@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://biuha3rrkpgdc"
-path="res://.godot/imported/spr_Blue_slime_walk.png-b32e2a135ded4436ab2aa6e33109e65f.ctex"
+path="res://.godot/imported/spr_Blue_slime_walk.png-6bfec09adc98d492a8928ef6e4fb5027.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Pixelarium/Pixelarium - Enemy Pack1 - Free Version/Slime/Blue Slime/spr_Blue_slime_walk.png"
-dest_files=["res://.godot/imported/spr_Blue_slime_walk.png-b32e2a135ded4436ab2aa6e33109e65f.ctex"]
+source_file="res://assets/Pixelarium/Pixelarium - Enemy Pack1/Slime/Blue Slime/spr_Blue_slime_walk.png"
+dest_files=["res://.godot/imported/spr_Blue_slime_walk.png-6bfec09adc98d492a8928ef6e4fb5027.ctex"]
 
 [params]
 

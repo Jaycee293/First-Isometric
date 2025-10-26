@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bngmurvkc5hsb"
-path="res://.godot/imported/spr_smallrock2.png-86412c769dddfc78014c5f8c1291a9a4.ctex"
+path="res://.godot/imported/spr_smallrock2.png-abaccd6f7554aa73b135d9140ec7aac2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Pixelarium/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Rocks/spr_smallrock2.png"
-dest_files=["res://.godot/imported/spr_smallrock2.png-86412c769dddfc78014c5f8c1291a9a4.ctex"]
+source_file="res://assets/Pixelarium/Pixelarium - GrassLands/Pack content/Sprites/Rocks/spr_smallrock2.png"
+dest_files=["res://.godot/imported/spr_smallrock2.png-abaccd6f7554aa73b135d9140ec7aac2.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cylldvbpap75h"
-path="res://.godot/imported/spr_player_back_idle_shadowless.png-0537c05eadccc56c3471bf553181a6b5.ctex"
+path="res://.godot/imported/spr_player_back_idle_shadowless.png-fb174e5fd89c2693f8ec1ca027614e5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Pixelarium/Pixelarium - Playable Character - Free Version/Pack Content/Shadowless animations/spr_player_back_idle_shadowless.png"
-dest_files=["res://.godot/imported/spr_player_back_idle_shadowless.png-0537c05eadccc56c3471bf553181a6b5.ctex"]
+source_file="res://assets/Pixelarium/Pixelarium - Playable Character/Pack Content/Shadowless animations/spr_player_back_idle_shadowless.png"
+dest_files=["res://.godot/imported/spr_player_back_idle_shadowless.png-fb174e5fd89c2693f8ec1ca027614e5f.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://skwgphon0coh"
-path="res://.godot/imported/spr_boulder3.png-45fbc6ea1b76501f56a1536dda1be3ea.ctex"
+path="res://.godot/imported/spr_boulder3.png-0e9c602a3658d26bfb1f292f55498656.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Pixelarium/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Rocks/spr_boulder3.png"
-dest_files=["res://.godot/imported/spr_boulder3.png-45fbc6ea1b76501f56a1536dda1be3ea.ctex"]
+source_file="res://assets/Pixelarium/Pixelarium - GrassLands/Pack content/Sprites/Rocks/spr_boulder3.png"
+dest_files=["res://.godot/imported/spr_boulder3.png-0e9c602a3658d26bfb1f292f55498656.ctex"]
 
 [params]
 

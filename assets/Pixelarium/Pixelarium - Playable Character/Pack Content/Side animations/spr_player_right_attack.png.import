@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dquwaavke58d8"
-path="res://.godot/imported/spr_player_right_attack.png-63a7bc3c3d7028fa3b0a40147e15c038.ctex"
+path="res://.godot/imported/spr_player_right_attack.png-9ba93ac5a3ddf30b2e0e48f2c1daa302.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Pixelarium/Pixelarium - Playable Character - Free Version/Pack Content/Side animations/spr_player_right_attack.png"
-dest_files=["res://.godot/imported/spr_player_right_attack.png-63a7bc3c3d7028fa3b0a40147e15c038.ctex"]
+source_file="res://assets/Pixelarium/Pixelarium - Playable Character/Pack Content/Side animations/spr_player_right_attack.png"
+dest_files=["res://.godot/imported/spr_player_right_attack.png-9ba93ac5a3ddf30b2e0e48f2c1daa302.ctex"]
 
 [params]
 

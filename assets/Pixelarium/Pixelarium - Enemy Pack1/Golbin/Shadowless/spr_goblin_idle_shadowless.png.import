@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dyo337l5eypgp"
-path="res://.godot/imported/spr_goblin_idle_shadowless.png-d8f543942fabcab9199b59b81a274364.ctex"
+path="res://.godot/imported/spr_goblin_idle_shadowless.png-a2d2390f8291e62490f8a670f26732bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Pixelarium/Pixelarium - Enemy Pack1 - Free Version/Golbin/Shadowless/spr_goblin_idle_shadowless.png"
-dest_files=["res://.godot/imported/spr_goblin_idle_shadowless.png-d8f543942fabcab9199b59b81a274364.ctex"]
+source_file="res://assets/Pixelarium/Pixelarium - Enemy Pack1/Golbin/Shadowless/spr_goblin_idle_shadowless.png"
+dest_files=["res://.godot/imported/spr_goblin_idle_shadowless.png-a2d2390f8291e62490f8a670f26732bd.ctex"]
 
 [params]
 
