@@ -17,11 +17,10 @@ z_index = -1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -891.0134
-offset_bottom = -600.0
+offset_right = 15.0
+offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.8717445, 2.2895832)
 color = Color(0.10980392, 0.33333334, 0.28627452, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
@@ -49,3 +48,9 @@ position = Vector2(-99, 20)
 
 [node name="Slime2" parent="." instance=ExtResource("5_iywne")]
 position = Vector2(41, -55)
+
+[node name="Slime3" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(-52, 40)
+
+[node name="Slime4" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(-55, 5)

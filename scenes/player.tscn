@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://bls7e03uednrc"]
+[gd_scene load_steps=98 format=3 uid="uid://bls7e03uednrc"]
 
 [ext_resource type="Texture2D" uid="uid://cpqx2k10wxqc8" path="res://assets/Pixelarium/Pixelarium - Playable Character/Pack Content/Front animations/spr_player_front_attack.png" id="1_dqkch"]
 [ext_resource type="Script" uid="uid://cl7eih8r8h1m0" path="res://scripts/player.gd" id="1_qlg0r"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://ccnjq8vodv02x" path="res://scripts/myhitbox.gd" id="11_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://bs1ko062m2t5" path="res://assets/Pixelarium/Pixelarium - Playable Character/Pack Content/Side animations/spr_player_left_attack.png" id="12_jej6c"]
 [ext_resource type="Texture2D" uid="uid://dnnw6xt7pw843" path="res://assets/Pixelarium/Pixelarium - Playable Character/Pack Content/Back animations/spr_player_back_attack.png" id="13_f1ej7"]
+[ext_resource type="Script" uid="uid://qwl46b8ba45y" path="res://scripts/myhurtbox.gd" id="14_f1ej7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hax0n"]
 atlas = ExtResource("2_smehm")
@@ -1089,6 +1090,16 @@ _data = {
 &"right_attack": SubResource("Animation_jej6c")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1ej7"]
+bg_color = Color(1, 0, 0, 1)
+corner_detail = 5
+anti_aliasing_size = 0.075
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oprun"]
+bg_color = Color(0.648293, 0.9184605, 0, 1)
+corner_detail = 5
+anti_aliasing_size = 0.08
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 5
@@ -1096,7 +1107,9 @@ script = ExtResource("1_qlg0r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hax0n")
-animation = &"front_idle"
+animation = &"death"
+frame = 7
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
@@ -1123,6 +1136,34 @@ disabled = true
 libraries = {
 &"": SubResource("AnimationLibrary_3v2ag")
 }
+
+[node name="MyHurtBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -38.999996)
+scale = Vector2(9.060889, 9.060889)
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("14_f1ej7")
+metadata/_custom_type_script = "uid://qwl46b8ba45y"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MyHurtBox"]
+position = Vector2(0, 5)
+scale = Vector2(1.119315, 1.119315)
+shape = SubResource("CapsuleShape2D_t4otl")
+debug_color = Color(0.98425823, 0, 0.34973747, 0.41960785)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -5.0
+offset_top = 16.0
+offset_right = 8.0
+offset_bottom = 19.0
+scale = Vector2(0.734095, 0.734095)
+theme_override_styles/background = SubResource("StyleBoxFlat_f1ej7")
+theme_override_styles/fill = SubResource("StyleBoxFlat_oprun")
+step = 0.0
+value = 100.0
+show_percentage = false
 
 [connection signal="area_entered" from="Attack/MyHitBox" to="." method="_on_my_hit_box_area_entered"]
 [connection signal="body_entered" from="Attack/MyHitBox" to="Attack/MyHitBox" method="_on_body_entered"]

@@ -4,6 +4,9 @@ extends CharacterBody2D
 @onready var attack: Sprite2D = $Attack
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 var last_facing: String = "down" # "up", "down", "left", "right"
+var hp = 100.0
+signal hp_zero
+var displayed_hp: float = 100.0
 
 func _physics_process(delta: float) -> void:
 	#get input for movement
@@ -31,6 +34,8 @@ func _physics_process(delta: float) -> void:
 			animated_sprite_2d.flip_h = false
 			animated_sprite_2d.play("side_walk")
 			last_facing = "right"
+			
+	#if player is not moving, play idle animations
 	else:
 		match last_facing:
 			"down":
@@ -42,7 +47,19 @@ func _physics_process(delta: float) -> void:
 			"right":
 				animated_sprite_2d.flip_h = false
 				animated_sprite_2d.play("side_idle")
-		
+	
+	const DMG_RATE = 5.0			
+	var overlapping_enem = %MyHurtBox.get_overlapping_bodies()
+	if overlapping_enem.size() > 0 :
+		hp -= DMG_RATE * overlapping_enem.size() * delta
+		%ProgressBar.value = hp
+		if hp <= 0.0 : 
+			animated_sprite_2d.play("death")
+			await animated_sprite_2d.animation_finished
+			hp_zero.emit()
+			
+	displayed_hp = lerp(displayed_hp, hp, 10 * delta)
+	%ProgressBar.value = displayed_hp
 
 func _do_attack(): 
 	# Hide the regular sprite and show the attack sprite
