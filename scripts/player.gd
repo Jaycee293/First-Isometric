@@ -14,8 +14,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("attack"):
 		_do_attack()
 		
-	
-	
 	#play animations for each side that it moves
 	if velocity.length() > 0.0:
 		if Input.is_action_pressed("move_down"):
@@ -38,3 +36,8 @@ func _do_attack():
 	await animation_player.animation_finished
 	attack.hide()
 	animated_sprite_2d.show()
+
+
+func _on_my_hit_box_area_entered(area: Area2D) -> void:
+	if area.is_in_group("myhurtbox"):
+		area.take_damage()
