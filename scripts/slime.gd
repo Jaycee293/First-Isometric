@@ -4,7 +4,8 @@ var health = 2
 var is_dead = false
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var slime: CharacterBody2D = $"."
-@onready var player: CharacterBody2D = $"../../Player"
+@onready var player: CharacterBody2D = $"../Player"
+
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
@@ -12,7 +13,9 @@ func _physics_process(delta: float) -> void:
 	else:
 		var direction = global_position.direction_to(player.global_position)
 		velocity = direction * 20
-		move_and_slide()
+		var collision = move_and_collide(velocity * delta)
+		if collision:
+			velocity = Vector2.ZERO  # or adjust manually
 	
 func take_damage():
 	health -= 1

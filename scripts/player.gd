@@ -8,7 +8,6 @@ var hp = 100.0
 var is_alive = true
 signal hp_zero
 
-
 func _physics_process(delta: float) -> void:
 	if is_alive :
 		#get input for movement
@@ -55,6 +54,12 @@ func _physics_process(delta: float) -> void:
 		if overlapping_enem.size() > 0 and is_alive:
 			hp -= DMG_RATE * overlapping_enem.size() * delta
 			%ProgressBar.value = hp
+			animated_sprite_2d.hide()
+			attack.show()
+			animation_player.play("front_hurt")
+			await animation_player.animation_finished
+			attack.hide()
+			animated_sprite_2d.show()
 			if hp <= 0.0 : 
 				die()
 				hp_zero.emit()

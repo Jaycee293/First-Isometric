@@ -24,53 +24,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.10980392, 0.33333334, 0.28627452, 1)
 
-[node name="Enemies" type="Node" parent="."]
-
-[node name="Slime14" parent="Enemies" instance=ExtResource("5_iywne")]
-position = Vector2(56, -40)
-
-[node name="Slime13" parent="Enemies" instance=ExtResource("5_iywne")]
-position = Vector2(8, 64)
-
-[node name="Slime" parent="Enemies" instance=ExtResource("5_iywne")]
-position = Vector2(-99, 20)
-
-[node name="Slime2" parent="Enemies" instance=ExtResource("5_iywne")]
-position = Vector2(41, -55)
-
-[node name="Slime3" parent="Enemies" instance=ExtResource("5_iywne")]
-position = Vector2(-52, 40)
-
-[node name="Slime4" parent="Enemies" instance=ExtResource("5_iywne")]
-position = Vector2(-55, 5)
-
-[node name="Slime5" parent="Enemies" instance=ExtResource("5_iywne")]
-position = Vector2(-48, -24)
-
-[node name="Slime6" parent="Enemies" instance=ExtResource("5_iywne")]
-position = Vector2(40, -16)
-
-[node name="Slime7" parent="Enemies" instance=ExtResource("5_iywne")]
-position = Vector2(40, 40)
-
-[node name="Slime8" parent="Enemies" instance=ExtResource("5_iywne")]
-position = Vector2(-8, -56)
-
-[node name="Slime9" parent="Enemies" instance=ExtResource("5_iywne")]
-position = Vector2(-48, -56)
-
-[node name="Slime10" parent="Enemies" instance=ExtResource("5_iywne")]
-position = Vector2(-16, 64)
-
-[node name="Slime11" parent="Enemies" instance=ExtResource("5_iywne")]
-position = Vector2(-72, 56)
-
-[node name="Slime12" parent="Enemies" instance=ExtResource("5_iywne")]
-position = Vector2(40, 56)
-
-[node name="Slime15" parent="Enemies" instance=ExtResource("5_iywne")]
-position = Vector2(72, -24)
-
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(1, -11)
 
@@ -78,6 +31,8 @@ position = Vector2(1, -11)
 position = Vector2(1, 7)
 zoom = Vector2(8, 8)
 position_smoothing_speed = 12.0
+
+[node name="Enemies" type="Node" parent="."]
 
 [node name="Game over" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -111,41 +66,86 @@ text = "Game Over"
 
 [node name="Cenary" type="Node" parent="."]
 
-[node name="Tree_1" parent="Cenary" instance=ExtResource("2_lbhrr")]
-position = Vector2(75, 33)
-
-[node name="Tree_2" parent="Cenary" instance=ExtResource("3_iywne")]
-position = Vector2(-92, -50)
-
-[node name="Tree_3" parent="Cenary" instance=ExtResource("4_p57ef")]
-position = Vector2(93, -38)
-
-[node name="Tree_4" parent="Cenary" instance=ExtResource("3_iywne")]
-position = Vector2(-105, -37)
-
-[node name="Tree_5" parent="Cenary" instance=ExtResource("2_lbhrr")]
-position = Vector2(-48, 88)
-
-[node name="Tree_6" parent="Cenary" instance=ExtResource("3_iywne")]
-position = Vector2(-104, 80)
-
-[node name="Tree_7" parent="Cenary" instance=ExtResource("4_p57ef")]
-position = Vector2(-88, 112)
-
-[node name="Tree_8" parent="Cenary" instance=ExtResource("3_iywne")]
-position = Vector2(128, 104)
-
-[node name="Tree_9" parent="Cenary" instance=ExtResource("2_lbhrr")]
-position = Vector2(24, -104)
-
-[node name="Tree_10" parent="Cenary" instance=ExtResource("3_iywne")]
-position = Vector2(0, -112)
-
-[node name="Tree_11" parent="Cenary" instance=ExtResource("3_iywne")]
-position = Vector2(-136, -40)
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_p57ef")
 autoplay = true
+
+[node name="Tree_2" parent="." instance=ExtResource("3_iywne")]
+position = Vector2(-92, -50)
+
+[node name="Tree_3" parent="." instance=ExtResource("4_p57ef")]
+position = Vector2(93, -38)
+
+[node name="Tree_4" parent="." instance=ExtResource("3_iywne")]
+position = Vector2(-105, -37)
+
+[node name="Tree_5" parent="." instance=ExtResource("2_lbhrr")]
+position = Vector2(-48, 88)
+
+[node name="Tree_6" parent="." instance=ExtResource("3_iywne")]
+position = Vector2(-104, 80)
+
+[node name="Tree_7" parent="." instance=ExtResource("4_p57ef")]
+position = Vector2(-88, 112)
+
+[node name="Tree_8" parent="." instance=ExtResource("3_iywne")]
+position = Vector2(128, 104)
+
+[node name="Tree_9" parent="." instance=ExtResource("2_lbhrr")]
+position = Vector2(24, -104)
+
+[node name="Tree_10" parent="." instance=ExtResource("3_iywne")]
+position = Vector2(0, -112)
+
+[node name="Tree_11" parent="." instance=ExtResource("3_iywne")]
+position = Vector2(-136, -40)
+
+[node name="Tree_1" parent="." instance=ExtResource("2_lbhrr")]
+position = Vector2(75, 33)
+
+[node name="Slime14" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(56, -40)
+
+[node name="Slime13" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(8, 64)
+
+[node name="Slime" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(-99, 20)
+
+[node name="Slime2" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(41, -55)
+
+[node name="Slime3" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(-52, 40)
+
+[node name="Slime4" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(-55, 5)
+
+[node name="Slime5" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(-48, -24)
+
+[node name="Slime6" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(40, -16)
+
+[node name="Slime7" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(40, 40)
+
+[node name="Slime8" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(-8, -56)
+
+[node name="Slime9" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(-48, -56)
+
+[node name="Slime10" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(-16, 64)
+
+[node name="Slime11" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(-72, 56)
+
+[node name="Slime12" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(40, 56)
+
+[node name="Slime15" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(72, -24)
 
 [connection signal="hp_zero" from="Player" to="Player" method="_on_hp_zero"]
