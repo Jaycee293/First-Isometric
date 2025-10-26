@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvf8r25ykkwxf"]
+
+[ext_resource type="Texture2D" uid="uid://frg7uyydb27s" path="res://assets/Pixelarium/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Vegetation/spr_tree1.png" id="1_tem7l"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b2jax"]
+radius = 6.999839
+height = 16.013208
+
+[node name="Tree_1" type="StaticBody2D"]
+
+[node name="SprTree1" type="Sprite2D" parent="."]
+position = Vector2(0, -20)
+texture = ExtResource("1_tem7l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 2)
+rotation = -1.5640087
+shape = SubResource("CapsuleShape2D_b2jax")
