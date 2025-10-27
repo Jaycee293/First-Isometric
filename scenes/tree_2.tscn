@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cuh2e3bv06p66"]
 
-[ext_resource type="Texture2D" uid="uid://0tmiwnbh5dte" path="res://assets/Pixelarium/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Vegetation/spr_tree2.png" id="1_iekdm"]
+[ext_resource type="Texture2D" uid="uid://0tmiwnbh5dte" path="res://assets/Pixelarium/Pixelarium - GrassLands/Pack content/Sprites/Vegetation/spr_tree2.png" id="1_iekdm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b2jax"]
 radius = 6.999839
