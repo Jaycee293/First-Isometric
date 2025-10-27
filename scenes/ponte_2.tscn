@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dexnr5qed3hv1"]
+
+[ext_resource type="Texture2D" uid="uid://c6d48iffymhki" path="res://assets/Pixelarium/Pixelarium - GrassLands/Pack content/Sprites/Tileset/spr_grass_tileset.png" id="1_mxe0w"]
+
+[node name="ponte2" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mxe0w")
+region_enabled = true
+region_rect = Rect2(176.40433, 304.20886, 95.505035, 47.54666)
