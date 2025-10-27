@@ -4,7 +4,7 @@ var health = 2
 var is_dead = false
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var slime: CharacterBody2D = $"."
-@onready var player: CharacterBody2D = $"../../Player"
+@onready var player: CharacterBody2D = $"../../../Player"
 
 
 func _physics_process(delta: float) -> void:
