@@ -70,82 +70,88 @@ text = "Game Over"
 stream = ExtResource("6_p57ef")
 autoplay = true
 
-[node name="Tree_2" parent="." instance=ExtResource("3_iywne")]
+[node name="Enviroment" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Tree_2" parent="Enviroment" instance=ExtResource("3_iywne")]
 position = Vector2(-92, -50)
 
-[node name="Tree_3" parent="." instance=ExtResource("4_p57ef")]
+[node name="Tree_3" parent="Enviroment" instance=ExtResource("4_p57ef")]
 position = Vector2(93, -38)
 
-[node name="Tree_4" parent="." instance=ExtResource("3_iywne")]
+[node name="Tree_4" parent="Enviroment" instance=ExtResource("3_iywne")]
 position = Vector2(-105, -37)
 
-[node name="Tree_5" parent="." instance=ExtResource("2_lbhrr")]
+[node name="Tree_5" parent="Enviroment" instance=ExtResource("2_lbhrr")]
 position = Vector2(-48, 88)
 
-[node name="Tree_6" parent="." instance=ExtResource("3_iywne")]
+[node name="Tree_6" parent="Enviroment" instance=ExtResource("3_iywne")]
 position = Vector2(-104, 80)
 
-[node name="Tree_7" parent="." instance=ExtResource("4_p57ef")]
+[node name="Tree_7" parent="Enviroment" instance=ExtResource("4_p57ef")]
 position = Vector2(-88, 112)
 
-[node name="Tree_8" parent="." instance=ExtResource("3_iywne")]
+[node name="Tree_8" parent="Enviroment" instance=ExtResource("3_iywne")]
 position = Vector2(128, 104)
 
-[node name="Tree_9" parent="." instance=ExtResource("2_lbhrr")]
+[node name="Tree_9" parent="Enviroment" instance=ExtResource("2_lbhrr")]
 position = Vector2(24, -104)
 
-[node name="Tree_10" parent="." instance=ExtResource("3_iywne")]
+[node name="Tree_10" parent="Enviroment" instance=ExtResource("3_iywne")]
 position = Vector2(0, -112)
 
-[node name="Tree_11" parent="." instance=ExtResource("3_iywne")]
+[node name="Tree_11" parent="Enviroment" instance=ExtResource("3_iywne")]
 position = Vector2(-136, -40)
 
-[node name="Tree_1" parent="." instance=ExtResource("2_lbhrr")]
+[node name="Tree_1" parent="Enviroment" instance=ExtResource("2_lbhrr")]
 position = Vector2(75, 33)
 
-[node name="Slime14" parent="." instance=ExtResource("5_iywne")]
+[node name="Slime" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Slime14" parent="Slime" instance=ExtResource("5_iywne")]
 position = Vector2(56, -40)
 
-[node name="Slime13" parent="." instance=ExtResource("5_iywne")]
+[node name="Slime13" parent="Slime" instance=ExtResource("5_iywne")]
 position = Vector2(8, 64)
 
-[node name="Slime" parent="." instance=ExtResource("5_iywne")]
+[node name="Slime" parent="Slime" instance=ExtResource("5_iywne")]
 position = Vector2(-99, 20)
 
-[node name="Slime2" parent="." instance=ExtResource("5_iywne")]
+[node name="Slime2" parent="Slime" instance=ExtResource("5_iywne")]
 position = Vector2(41, -55)
 
-[node name="Slime3" parent="." instance=ExtResource("5_iywne")]
+[node name="Slime3" parent="Slime" instance=ExtResource("5_iywne")]
 position = Vector2(-52, 40)
 
-[node name="Slime4" parent="." instance=ExtResource("5_iywne")]
+[node name="Slime4" parent="Slime" instance=ExtResource("5_iywne")]
 position = Vector2(-55, 5)
 
-[node name="Slime5" parent="." instance=ExtResource("5_iywne")]
+[node name="Slime5" parent="Slime" instance=ExtResource("5_iywne")]
 position = Vector2(-48, -24)
 
-[node name="Slime6" parent="." instance=ExtResource("5_iywne")]
+[node name="Slime6" parent="Slime" instance=ExtResource("5_iywne")]
 position = Vector2(40, -16)
 
-[node name="Slime7" parent="." instance=ExtResource("5_iywne")]
+[node name="Slime7" parent="Slime" instance=ExtResource("5_iywne")]
 position = Vector2(40, 40)
 
-[node name="Slime8" parent="." instance=ExtResource("5_iywne")]
+[node name="Slime8" parent="Slime" instance=ExtResource("5_iywne")]
 position = Vector2(-8, -56)
 
-[node name="Slime9" parent="." instance=ExtResource("5_iywne")]
+[node name="Slime9" parent="Slime" instance=ExtResource("5_iywne")]
 position = Vector2(-48, -56)
 
-[node name="Slime10" parent="." instance=ExtResource("5_iywne")]
+[node name="Slime10" parent="Slime" instance=ExtResource("5_iywne")]
 position = Vector2(-16, 64)
 
-[node name="Slime11" parent="." instance=ExtResource("5_iywne")]
+[node name="Slime11" parent="Slime" instance=ExtResource("5_iywne")]
 position = Vector2(-72, 56)
 
-[node name="Slime12" parent="." instance=ExtResource("5_iywne")]
+[node name="Slime12" parent="Slime" instance=ExtResource("5_iywne")]
 position = Vector2(40, 56)
 
-[node name="Slime15" parent="." instance=ExtResource("5_iywne")]
+[node name="Slime15" parent="Slime" instance=ExtResource("5_iywne")]
 position = Vector2(72, -24)
 
 [connection signal="hp_zero" from="Player" to="Player" method="_on_hp_zero"]
