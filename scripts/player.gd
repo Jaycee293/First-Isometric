@@ -3,18 +3,63 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var attack: Sprite2D = $Attack
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 var last_facing: String = "down" # "up", "down", "left", "right"
+
 var hp = 100.0
 var is_alive = true
 signal hp_zero
 
+const SPEED = 200.0
+
+const DASH_SPEED = 700.0
+var dashing = false
+var can_dash = true
+
+
+
 func _physics_process(delta: float) -> void:
 	if is_alive :
 		#get input for movement
-		var direction = Input.get_vector("move_left","move_right","move_up","move_down")
-		velocity = direction * 200
-		move_and_slide()
+		var direction := Vector2.ZERO
+		direction.x = Input.get_axis("move_left", "move_right")
+		direction.y = Input.get_axis("move_up", "move_down")
 		
+		if direction:
+			# 1. NORMALIZAÇÃO: Garante que a magnitude do vetor seja 1,
+			# eliminando o aumento de velocidade nas diagonais.
+			# 2. APLICAÇÃO: Multiplica o vetor normalizado pela velocidade constante
+			velocity = direction.normalized() * SPEED
+			#if dashing:
+				#velocity = direction.normalized() * DASH_SPEED
+		else:
+			velocity = Vector2.ZERO
+	
+		set_animation(direction)
+		move_and_slide()
+				
+		if Input.is_action_just_pressed("dash") and can_dash:
+			
+			animated_sprite_2d.hide()
+			attack.show()
+			animation_player.play("dash")
+	
+	
+			
+			dashing = true
+			can_dash = false
+			
+			await animation_player.animation_finished
+			attack.hide()
+			
+			animated_sprite_2d.show()
+			
+		
+			
+			$dash_timer.start()
+			$cooldown_dash.start()
+	
+					
 		#attack
 		if Input.is_action_just_pressed("attack_down"):
 			_do_attack()
@@ -24,39 +69,7 @@ func _physics_process(delta: float) -> void:
 			_do_attack()
 		if Input.is_action_just_pressed("attack_right"):
 			_do_attack()
-
 			
-			
-		#play animations for each side that it moves
-		if velocity.length() > 0.0:
-			if Input.is_action_pressed("move_down"):
-				animated_sprite_2d.play("front_walk")
-				last_facing = "down"
-			if Input.is_action_pressed("move_up"):
-				animated_sprite_2d.play("back_walk")
-				last_facing = "up"
-			if Input.is_action_pressed("move_left"):
-				animated_sprite_2d.flip_h = true
-				animated_sprite_2d.play("side_walk")
-				last_facing = "left"
-			if Input.is_action_pressed("move_right"):
-				animated_sprite_2d.flip_h = false
-				animated_sprite_2d.play("side_walk")
-				last_facing = "right"
-				
-		#if player is not moving, play idle animations
-		else:
-			match last_facing:
-				"down":
-					animated_sprite_2d.play("front_idle")
-				"up":
-					animated_sprite_2d.play("back_idle")
-				"left":
-					animated_sprite_2d.play("side_idle")
-				"right":
-					animated_sprite_2d.flip_h = false
-					animated_sprite_2d.play("side_idle")
-		
 		const DMG_RATE = 20.0			
 		var overlapping_enem = %MyHurtBox.get_overlapping_bodies()
 		if overlapping_enem.size() > 0 and is_alive:
@@ -72,7 +85,44 @@ func _physics_process(delta: float) -> void:
 				die()
 				hp_zero.emit()
 				
-	
+func set_animation(direction: Vector2):
+	if direction != Vector2.ZERO:
+		# se ta andando horizontalmente
+		if direction.x != 0:
+			animated_sprite_2d.play("side_walk")
+			if direction.x < 0:
+				animated_sprite_2d.flip_h = true # Esquerda
+				last_facing = "left"
+			else:
+				animated_sprite_2d.flip_h = false # Direita
+				last_facing = "right"
+		elif direction.y != 0:
+			if direction.y < 0:
+				animated_sprite_2d.play("back_walk") # Cima
+				last_facing = "up"
+			else:
+				animated_sprite_2d.play("front_walk") # Baixo
+				last_facing = "down"
+	else:
+		match last_facing:
+			"down":
+				animated_sprite_2d.play("front_idle")
+			"up":
+				animated_sprite_2d.play("back_idle")
+			"left":
+				animated_sprite_2d.flip_h = true
+				animated_sprite_2d.play("side_idle")
+			"right":
+				animated_sprite_2d.flip_h = false
+				animated_sprite_2d.play("side_idle")
+				
+func _on_dash_timer_timeout() -> void:
+	dashing = false
+
+
+func _on_cooldown_dash_timeout() -> void:
+	can_dash = true
+
 	
 func die():
 	is_alive = false
@@ -90,19 +140,15 @@ func _do_attack():
 	
 	if Input.is_action_just_pressed("attack_down"):
 				animation_player.play("front_attack")
-				last_facing = "down"
 				
 	if Input.is_action_just_pressed("attack_up"):
 				animation_player.play("back_attack")
-				last_facing = "up"
 	
 	if Input.is_action_just_pressed("attack_left"):
 				animation_player.play("left_attack")
-				last_facing = "left"
 				
 	if Input.is_action_just_pressed("attack_right"):
 				animation_player.play("right_attack")
-				last_facing = "right"
 
 				
 	await animation_player.animation_finished
