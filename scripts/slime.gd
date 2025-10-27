@@ -11,11 +11,12 @@ func _physics_process(delta: float) -> void:
 	if is_dead:
 		return  # Skip movement entirely
 	else:
-		var direction = global_position.direction_to(player.global_position)
-		velocity = direction * 20
-		var collision = move_and_collide(velocity * delta)
-		if collision:
-			velocity = Vector2.ZERO  # or adjust manually
+		if global_position.distance_to(player.global_position) < 70:
+			var direction = global_position.direction_to(player.global_position)
+			velocity = direction * 20
+			var collision = move_and_collide(velocity * delta)
+			if collision:
+				velocity = Vector2.ZERO  # or adjust manually
 	
 func take_damage():
 	health -= 1

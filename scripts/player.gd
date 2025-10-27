@@ -57,7 +57,7 @@ func _physics_process(delta: float) -> void:
 					animated_sprite_2d.flip_h = false
 					animated_sprite_2d.play("side_idle")
 		
-		const DMG_RATE = 100.0			
+		const DMG_RATE = 20.0			
 		var overlapping_enem = %MyHurtBox.get_overlapping_bodies()
 		if overlapping_enem.size() > 0 and is_alive:
 			hp -= DMG_RATE * overlapping_enem.size() * delta
