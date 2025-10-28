@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 
 	# DASH INPUT
 	if Input.is_action_just_pressed("dash") and dash.can_dash:
-		dash.start_dash(animated_sprite_2d, direction, DASH_DUR)
+		dash.start_dash(attack, direction, DASH_DUR)
 
 	# APPLY VELOCITY
 	if dash.is_dashing():
@@ -85,32 +85,27 @@ func _physics_process(delta: float) -> void:
 func set_animation(direction: Vector2):
 	if direction != Vector2.ZERO:
 		if direction.x != 0:
-			animated_sprite_2d.play("side_walk")
-			animated_sprite_2d.flip_h = direction.x < 0
+			animation_player.play("right_walk")
+			attack.flip_h = direction.x > 0
 			last_facing = "left" if direction.x < 0 else "right"
 		elif direction.y != 0:
-			animated_sprite_2d.play("back_walk" if direction.y < 0 else "front_walk")
+			animation_player.play("back_walk" if direction.y < 0 else "front_walk")
 			last_facing = "up" if direction.y < 0 else "down"
 	else:
 		match last_facing:
 			"down":
-				animated_sprite_2d.play("front_idle")
+				animation_player.play("front_idle")
 			"up":
-				animated_sprite_2d.play("back_idle")
+				animation_player.play("back_idle")
 			"left":
-				animated_sprite_2d.flip_h = true
-				animated_sprite_2d.play("side_idle")
+				animation_player.play("left_idle")
 			"right":
-				animated_sprite_2d.flip_h = false
-				animated_sprite_2d.play("side_idle")
+				animation_player.play("right_idle")
 
 # --------------------------
 # ATTACK LOGIC
 # --------------------------
 func _do_attack():
-	animated_sprite_2d.hide()
-	attack.show()
-
 	if Input.is_action_just_pressed("attack_down"):
 		animation_player.play("front_attack")
 	elif Input.is_action_just_pressed("attack_up"):
@@ -121,16 +116,12 @@ func _do_attack():
 		animation_player.play("right_attack")
 
 	await animation_player.animation_finished
-	attack.hide()
-	animated_sprite_2d.show()
 
 # --------------------------
 # DEATH LOGIC
 # --------------------------
 func die():
 	is_alive = false
-	animated_sprite_2d.hide()
-	attack.show()
 	animation_player.play("death")
 	await animation_player.animation_finished
 	get_tree().paused = true
