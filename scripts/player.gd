@@ -3,6 +3,9 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var attack: Sprite2D = $Attack
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var dash: Node2D = $Dash
+
+
 
 var last_facing: String = "down" # "up", "down", "left", "right"
 
@@ -11,11 +14,8 @@ var is_alive = true
 signal hp_zero
 
 const SPEED = 200.0
-
 const DASH_SPEED = 700.0
-var dashing = false
-var can_dash = true
-
+const DASH_DUR = 0.2
 
 
 func _physics_process(delta: float) -> void:
@@ -24,12 +24,40 @@ func _physics_process(delta: float) -> void:
 		var direction := Vector2.ZERO
 		direction.x = Input.get_axis("move_left", "move_right")
 		direction.y = Input.get_axis("move_up", "move_down")
+		if Input.is_action_just_pressed("dash"):
+			dash.start_dash(DASH_DUR)
+			#animated_sprite_2d.hide()
+			#attack.show()
+			#dashing = true
+			#can_dash = false
+			#match last_facing:
+				#"left":
+					#attack.flip_h = false
+					#animation_player.play("dash")
+				#"right":
+					#attack.flip_h = true
+					#animation_player.play("dash")
+			#
+			#dashing = true
+			#can_dash = false
+			#
+			#await animation_player.animation_finished
+			#attack.hide()
+			#
+			#animated_sprite_2d.show()
+			#
+		#
+			#
+			#$dash_timer.start()
+			#$cooldown_dash.start()
+			
+		var speed = DASH_SPEED if dash.is_dashing() else SPEED
 		
 		if direction:
 			# 1. NORMALIZAÇÃO: Garante que a magnitude do vetor seja 1,
 			# eliminando o aumento de velocidade nas diagonais.
 			# 2. APLICAÇÃO: Multiplica o vetor normalizado pela velocidade constante
-			velocity = direction.normalized() * SPEED
+			velocity = direction.normalized() * speed
 			#if dashing:
 				#velocity = direction.normalized() * DASH_SPEED
 		else:
@@ -38,27 +66,7 @@ func _physics_process(delta: float) -> void:
 		set_animation(direction)
 		move_and_slide()
 				
-		if Input.is_action_just_pressed("dash") and can_dash:
-			
-			animated_sprite_2d.hide()
-			attack.show()
-			animation_player.play("dash")
-	
-	
-			
-			dashing = true
-			can_dash = false
-			
-			await animation_player.animation_finished
-			attack.hide()
-			
-			animated_sprite_2d.show()
-			
-		
-			
-			$dash_timer.start()
-			$cooldown_dash.start()
-	
+
 					
 		#attack
 		if Input.is_action_just_pressed("attack_down"):
@@ -96,6 +104,7 @@ func set_animation(direction: Vector2):
 			else:
 				animated_sprite_2d.flip_h = false # Direita
 				last_facing = "right"
+		# se ta andando verticalmente
 		elif direction.y != 0:
 			if direction.y < 0:
 				animated_sprite_2d.play("back_walk") # Cima
@@ -116,12 +125,12 @@ func set_animation(direction: Vector2):
 				animated_sprite_2d.flip_h = false
 				animated_sprite_2d.play("side_idle")
 				
-func _on_dash_timer_timeout() -> void:
-	dashing = false
-
-
-func _on_cooldown_dash_timeout() -> void:
-	can_dash = true
+#func _on_dash_timer_timeout() -> void:
+	#dashing = false
+#
+#
+#func _on_cooldown_dash_timeout() -> void:
+	#can_dash = true
 
 	
 func die():

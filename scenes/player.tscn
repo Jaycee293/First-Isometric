@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=3 uid="uid://bls7e03uednrc"]
+[gd_scene load_steps=103 format=3 uid="uid://bls7e03uednrc"]
 
 [ext_resource type="Texture2D" uid="uid://cpqx2k10wxqc8" path="res://assets/Pixelarium/Pixelarium - Playable Character/Pack Content/Front animations/spr_player_front_attack.png" id="1_dqkch"]
 [ext_resource type="Script" uid="uid://cl7eih8r8h1m0" path="res://scripts/player.gd" id="1_qlg0r"]
@@ -13,7 +13,9 @@
 [ext_resource type="Script" uid="uid://ccnjq8vodv02x" path="res://scripts/myhitbox.gd" id="11_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://bs1ko062m2t5" path="res://assets/Pixelarium/Pixelarium - Playable Character/Pack Content/Side animations/spr_player_left_attack.png" id="12_jej6c"]
 [ext_resource type="Texture2D" uid="uid://dnnw6xt7pw843" path="res://assets/Pixelarium/Pixelarium - Playable Character/Pack Content/Back animations/spr_player_back_attack.png" id="13_f1ej7"]
+[ext_resource type="Texture2D" uid="uid://bcw1vpilga5cn" path="res://spr_player_left_walk.png" id="13_oprun"]
 [ext_resource type="Script" uid="uid://qwl46b8ba45y" path="res://scripts/myhurtbox.gd" id="14_f1ej7"]
+[ext_resource type="PackedScene" uid="uid://cfnqkop4uvqx6" path="res://scenes/Dash.tscn" id="16_qfm1y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hax0n"]
 atlas = ExtResource("2_smehm")
@@ -982,6 +984,83 @@ tracks/15/keys = {
 "values": [Vector2(1.119315, 1.119315)]
 }
 
+[sub_resource type="Animation" id="Animation_fulsm"]
+resource_name = "dash"
+length = 0.413
+step = 0.066
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Attack:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Attack:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.066, 0.132, 0.198, 0.264, 0.33002216),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Attack:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(19, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Attack:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Attack:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Attack:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("13_oprun")]
+}
+
 [sub_resource type="Animation" id="Animation_f1ej7"]
 resource_name = "death"
 length = 0.802
@@ -1883,143 +1962,6 @@ tracks/15/keys = {
 "values": [Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_fulsm"]
-resource_name = "dash"
-length = 0.413
-step = 0.066
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Attack:hframes")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [6]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Attack:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.066, 0.132, 0.198, 0.264, 0.33002216),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Attack:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.066, 0.132, 0.198, 0.264, 0.32999998),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(19, 1), Vector2(17, 1), Vector2(-16, 1), Vector2(-21, 1), Vector2(-29, 1), Vector2(-31, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Attack:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.066, 0.132, 0.198, 0.264, 0.32999998),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Attack:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.066, 0.132, 0.198, 0.264, 0.32999998),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("MyHurtBox/CollisionShape2D:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.066, 0.132, 0.198, 0.264, 0.32999998),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 5), Vector2(-1.937211, 5), Vector2(-30.026772, 5), Vector2(-38.744225, 5), Vector2(-46.49307, 5), Vector2(-48.43028, 5)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("MyHurtBox/CollisionShape2D:rotation")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.066, 0.132, 0.198, 0.264, 0.32999998),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("MyHurtBox/CollisionShape2D:scale")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.066, 0.132, 0.198, 0.264, 0.32999998),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1.119315, 1.119315), Vector2(1.119315, 1.119315), Vector2(1.119315, 1.119315), Vector2(1.119315, 1.119315), Vector2(1.119315, 1.119315), Vector2(1.119315, 1.119315)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("CollisionShape2D:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.066, 0.132, 0.198, 0.264, 0.33002216),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 5), Vector2(-2, 5), Vector2(-31, 5), Vector2(-40, 5), Vector2(-49, 5), Vector2(-50, 5)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("CollisionShape2D:rotation")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.066, 0.132, 0.198, 0.264, 0.33002216),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("CollisionShape2D:scale")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 0.066, 0.132, 0.198, 0.264, 0.33002216),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3v2ag"]
 _data = {
 &"RESET": SubResource("Animation_d2wvv"),
@@ -2049,7 +1991,7 @@ script = ExtResource("1_qlg0r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hax0n")
-animation = &"front_walk"
+animation = &"front_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
@@ -2104,16 +2046,14 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_oprun")
 value = 100.0
 show_percentage = false
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 2.102
-
 [node name="dash_timer" type="Timer" parent="."]
 wait_time = 0.2
 
 [node name="cooldown_dash" type="Timer" parent="."]
 
+[node name="Dash" parent="." instance=ExtResource("16_qfm1y")]
+
 [connection signal="area_entered" from="Attack/MyHitBox" to="." method="_on_my_hit_box_area_entered"]
 [connection signal="body_entered" from="Attack/MyHitBox" to="Attack/MyHitBox" method="_on_body_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="cooldown_dash" to="." method="_on_cooldown_dash_timeout"]
