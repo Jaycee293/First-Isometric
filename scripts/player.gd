@@ -20,8 +20,8 @@ signal hp_zero
 # CONSTANTS
 # --------------------------
 const SPEED = 100.0
-const DASH_SPEED = 700.0
-const DASH_DUR = 0.2
+const DASH_SPEED = 500.0
+const DASH_DUR = 0.1
 const DMG_RATE = 20.0
 
 # --------------------------
@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 
 	# DASH INPUT
 	if Input.is_action_just_pressed("dash") and dash.can_dash:
-		dash.start_dash(attack, direction, DASH_DUR)
+		dash.start_dash(self, direction, DASH_DUR)
 
 	# APPLY VELOCITY
 	if dash.is_dashing():
