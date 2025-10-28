@@ -19,7 +19,7 @@ signal hp_zero
 # --------------------------
 # CONSTANTS
 # --------------------------
-const SPEED = 200.0
+const SPEED = 100.0
 const DASH_SPEED = 700.0
 const DASH_DUR = 0.2
 const DMG_RATE = 20.0
@@ -85,43 +85,56 @@ func _physics_process(delta: float) -> void:
 func set_animation(direction: Vector2):
 	if direction != Vector2.ZERO:
 		if direction.x != 0:
-			animation_player.play("right_walk")
-			attack.flip_h = direction.x > 0
+			animated_sprite_2d.play("side_walk")
+			animated_sprite_2d.flip_h = direction.x < 0
 			last_facing = "left" if direction.x < 0 else "right"
 		elif direction.y != 0:
-			animation_player.play("back_walk" if direction.y < 0 else "front_walk")
+			animated_sprite_2d.play("back_walk" if direction.y < 0 else "front_walk")
 			last_facing = "up" if direction.y < 0 else "down"
 	else:
 		match last_facing:
 			"down":
-				animation_player.play("front_idle")
+				animated_sprite_2d.play("front_idle")
 			"up":
-				animation_player.play("back_idle")
+				animated_sprite_2d.play("back_idle")
 			"left":
-				animation_player.play("left_idle")
+				animated_sprite_2d.flip_h = true
+				animated_sprite_2d.play("side_idle")
 			"right":
-				animation_player.play("right_idle")
+				animated_sprite_2d.flip_h = false
+				animated_sprite_2d.play("side_idle")
 
 # --------------------------
 # ATTACK LOGIC
 # --------------------------
 func _do_attack():
+	animated_sprite_2d.hide()
+	attack.show()
+
 	if Input.is_action_just_pressed("attack_down"):
 		animation_player.play("front_attack")
+		last_facing = "down" 
 	elif Input.is_action_just_pressed("attack_up"):
 		animation_player.play("back_attack")
+		last_facing = "up" 
 	elif Input.is_action_just_pressed("attack_left"):
 		animation_player.play("left_attack")
+		last_facing = "left" 
 	elif Input.is_action_just_pressed("attack_right"):
 		animation_player.play("right_attack")
+		last_facing = "right" 
 
 	await animation_player.animation_finished
+	attack.hide()
+	animated_sprite_2d.show()
 
 # --------------------------
 # DEATH LOGIC
 # --------------------------
 func die():
 	is_alive = false
+	animated_sprite_2d.hide()
+	attack.show()
 	animation_player.play("death")
 	await animation_player.animation_finished
 	get_tree().paused = true
