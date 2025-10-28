@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 
 	# DASH INPUT
 	if Input.is_action_just_pressed("dash") and dash.can_dash:
-		dash.start_dash(direction, DASH_DUR)
+		dash.start_dash(animated_sprite_2d, direction, DASH_DUR)
 
 	# APPLY VELOCITY
 	if dash.is_dashing():

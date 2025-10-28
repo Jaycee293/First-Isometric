@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjc25tgxso5sr"]
+
+[ext_resource type="Texture2D" uid="uid://i4cjdwy1kcoj" path="res://assets/2d_project/icon.png" id="1_0vpsj"]
+[ext_resource type="Script" uid="uid://dlcfry4ew82f0" path="res://scripts/dash_ghost.gd" id="2_fsa6i"]
+
+[node name="DashGhost" type="Sprite2D"]
+z_index = 3
+texture = ExtResource("1_0vpsj")
+script = ExtResource("2_fsa6i")

@@ -2047,6 +2047,7 @@ value = 100.0
 show_percentage = false
 
 [node name="Dash" parent="." instance=ExtResource("16_qfm1y")]
+z_index = 3
 
 [connection signal="area_entered" from="Attack/MyHitBox" to="." method="_on_my_hit_box_area_entered"]
 [connection signal="body_entered" from="Attack/MyHitBox" to="Attack/MyHitBox" method="_on_body_entered"]
