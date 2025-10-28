@@ -2046,14 +2046,8 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_oprun")
 value = 100.0
 show_percentage = false
 
-[node name="dash_timer" type="Timer" parent="."]
-wait_time = 0.2
-
-[node name="cooldown_dash" type="Timer" parent="."]
-
 [node name="Dash" parent="." instance=ExtResource("16_qfm1y")]
 
 [connection signal="area_entered" from="Attack/MyHitBox" to="." method="_on_my_hit_box_area_entered"]
 [connection signal="body_entered" from="Attack/MyHitBox" to="Attack/MyHitBox" method="_on_body_entered"]
-[connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]
-[connection signal="timeout" from="cooldown_dash" to="." method="_on_cooldown_dash_timeout"]
+[connection signal="body_entered" from="MyHurtBox" to="." method="_on_my_hurt_box_body_entered"]
